@@ -1,0 +1,67 @@
+Treść Zadania
+Twoim zadaniem jest przeprowadzenie refaktoryzacji poniższego kodu w języku C#.
+
+Tematyka:
+Jesteś programistą pracującym nad systemem rezerwacji biletów lotniczych. Program przypisuje pasażerom klasy podróży na podstawie ich wyboru, ale obecny kod wymaga poprawy – chcemy zastąpić instrukcję if bardziej eleganckim rozwiązaniem.
+
+Wymagania:
+Zmień metodę GetTicketClass, aby zamiast instrukcji if wykorzystać strukturę Dictionary.
+
+Kod powinien działać tak samo jak przed refaktoryzacją, ale być bardziej czytelny i zgodny z dobrymi praktykami programistycznymi.
+
+Nie zmieniaj logiki działania programu poza refaktoryzacją metody GetTicketClass.
+
+Kod przed refaktoryzacją:
+
+namespace RefaktoryzacjaBiletow
+
+{
+
+    internal class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            Console.Write("Wybierz klasę biletu (E - Ekonomiczna, B - Biznesowa, F - Pierwsza klasa): ");
+
+            string ticketType = Console.ReadLine();
+
+
+
+            string ticketClass = GetTicketClass(ticketType);
+
+            Console.WriteLine($"Wybrana klasa: {ticketClass}");
+
+        }
+
+
+
+        private static string GetTicketClass(string ticketType)
+
+        {
+
+            if (ticketType == "E") return "Klasa Ekonomiczna";
+
+            if (ticketType == "B") return "Klasa Biznesowa";
+
+            if (ticketType == "F") return "Pierwsza Klasa";
+
+            return "Nieznana klasa biletu";
+
+        }
+
+    }
+
+}
+
+
+
+Oczekiwany efekt po refaktoryzacji
+Po wprowadzeniu zmian kod powinien wyglądać następująco:
+
+Zamiast instrukcji if w metodzie GetTicketClass należy zastosować Dictionary, aby przypisywać typy biletów do ich nazw w bardziej przejrzysty sposób.
+
+Logika działania powinna pozostać niezmieniona.
